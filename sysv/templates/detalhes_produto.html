@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+    <div class="jumbotron">
+        <h4 class="display-4">{{ detalhes.titulo }}</h4>
+        <p class="lead">{{ detalhes.descriao }}</p>
+        <img src="{% if detalhes.imagem == 'imagem' or detalhes.imagem == '' %} {% static 'images/download.svg' %} {% else %} /media/{{ detalhes.imagem }} {% endif %}" width="200" height="200">
+        <p>Preço: {{ detalhes.preco }}</p>
+        <p>Código: {{ detalhes.codigo }}</p>
+        <a href="{% url 'updateproduct' detalhes.id %}" class="sc-add-to-cart btn btn-primary">Editar</a>
+    </div>
+
+{% endblock %}

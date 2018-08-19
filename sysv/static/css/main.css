@@ -1,0 +1,38 @@
+body{
+    background: #f8f9fa;
+    font-family: Arial;
+}
+.left{
+    float: left;
+}
+.right{
+    float: right;
+    color: #ffffff;
+}
+
+/*Link vendas*/
+.left #hlink{
+    color: #ffffff;
+    text-decoration: none;
+}
+.right h5{
+    font-size: 12px;
+    margin-top: 5px;
+}
+.card-deck{
+    margin-top: 15px;
+}
+.card-deck .card{
+    box-shadow: #cecccc 2px 1px 10px;
+}
+.row{
+    margin-top: -10px;
+    margin-bottom: 20px;
+}
+.card-deck img{
+    width: 348px;
+    height: 224px;
+}
+#form label{
+    display: none;
+}

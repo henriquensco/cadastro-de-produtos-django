@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="row">
+ 
+{% for produto in produtos %}
+
+
+   <div class="card sc-product-item" style="margin-left: 10px; margin-top: 10px;">
+        <img class="card-img-top" data-name="product_image" src="{% if produto.imagem == 'imagem' or produto.imagem == '' %} {% static 'images/download.svg' %} {% else %} /media/{{ produto.imagem }} {% endif %}" style="width: 348px; height: 224px;">
+        <div class="card-body">
+            <h5 class="card-title" data-name="product_name">{{ produto.titulo }}</h5>
+            <p class="card-text price" name="product_price" value="{{ produto.preco }}"><small class="text-muted">Valor: R${{ produto.preco }}</small></p>
+            <input name="product_price" value="{{ produto.preco }}" type="hidden" />
+            <input name="product_id" value="{{ produto.id }}" type="hidden" />
+            <div style="margin-left: 30px;">
+                <a href="{% url 'updateproduct' produto.id %}" class="sc-add-to-cart btn btn-primary">Editar</a>
+                <a href="{% url 'productdetail' produto.id %}" class="sc-add-to-cart btn btn-info">Detalhes</a>
+                <a href="{% url 'deleteproduct' produto.id %}" class="sc-add-to-cart btn btn-danger">Deletar</a>
+            </div>
+        </div>
+    </div> 
+
+ 
+
+{% endfor %}
+
+</div>
+
+
+
+{% endblock %}
