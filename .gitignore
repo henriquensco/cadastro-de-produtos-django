@@ -1,3 +1,6 @@
 .idea
 *ngrok
 *db.sqlite3
+*.env
+*Procfile
+*runtime.txt
